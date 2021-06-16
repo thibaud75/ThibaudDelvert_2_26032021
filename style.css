@@ -78,7 +78,7 @@ footer {
 .menu ul li:hover{
   border-bottom: 2px solid #0367fc;
 }
-.menu ul li a:hover{
+.menu ul li:hover a{
   color: #0367fc;
 }
 .menu h3 {
@@ -185,21 +185,22 @@ footer li a {
 /* MAIN */
 
 .research {
-  border: 2px solid #f2f2f2;
   display: flex;
   border-radius: 8px 0 0 8px;
   height: 40px;
   max-width: max-content;
+  width: 100%;
+  position: relative;
 }
 .research span {
   display: inline-flex;
-  width: 4em;
+  width: 3em;
   background-color: #f2f2f2;
   border-radius: 8px 0 0 8px;
   justify-content: center;
   align-items: center;
 }
-.research button {
+.research .mobile-search {
   display: inline-flex;
   width: 3em;
   background-color: #0367fc;
@@ -207,25 +208,31 @@ footer li a {
   justify-content: center;
   align-items: center;
   border-width: 0px;
+  position: absolute;
+  right: -7px;
+  top: 0;
+  bottom: 0;
 }
-.research button i {
+.research .mobile-search i {
   color: #fff;
 }
-.research button p{
+.research .others-search{
   display: none;
 }
 .research input {
   font-size: 18px;
   font-family: "Raleway", sans-serif;
+  padding: 0 10px;
+  width: auto;
 }
 #city {
   flex-grow: 1;
   border-style: none;
+  border: 2px solid #f2f2f2;
 }
 #city::placeholder {
   color: #000;
   font-weight: bold;
-  padding-left: 10px;
 }
 .ville {
   font-size: 14px;
@@ -245,12 +252,6 @@ main p {
 .principal h2 {
   margin-bottom: 25px;
 }
-
-/* .hebergement
-{
-    display: flex;
-    flex-direction: column;
-} */
 
 .hebergement ul {
   display: flex;
@@ -392,6 +393,7 @@ main p {
     font-size: 18px;
     align-items: center;
     flex-direction: row-reverse;
+    padding-bottom: 10px;
   }
   .menu ul {
     margin: 0;
@@ -399,6 +401,7 @@ main p {
   .menu h3 {
     font-size: 18px;
     padding: 2px 10px;
+    margin: 42px 0 0 0;
   }
   .menu ul li {
     border-top: 2px solid #f2f2f2;
@@ -409,6 +412,9 @@ main p {
     border-top: 2px solid #0367fc;
     border-bottom: none;
   }
+  .menu ul li a{
+    padding: 40px 0 0 0;
+  }
   h1 {
     font-size: 25px;
     margin-top: 35px;
@@ -416,16 +422,18 @@ main p {
   .populaire h2 i {
     right: 134px;
   }
-  .research button i{
+  .research .mobile-search{
     display: none;
   }
-  .research button p{
+  .research .others-search{
     display: inline;
     color: #fff;
     font-size: 18px;
-    font-family: "Raleway", sans-serif; 
+    font-family: "Raleway", sans-serif;
+    background-color: #0367fc;
+    border-width: 0px;
   }
-  .research button{
+  .research .others-search{
     width: unset;
     border-radius: 0 10px 10px 0;
   }
